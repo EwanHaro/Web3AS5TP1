@@ -1,0 +1,115 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+}
+
+header, footer {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  
+}
+header{
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 10px;
+  padding: 10px;
+}
+footer{
+  margin: 10px;
+  padding: 5px;
+}
+section{
+  padding: 10px;
+}
+
+article {
+   margin: 10px;
+  padding: 10px;
+  border: 2px dotted #777;
+}
+p{
+  padding: 10px;
+}
+h1 {
+  color: red;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+h2 {
+  padding: 10px;
+  background-color: red;
+  text-transform: capitalize;
+  color: black;
+  border-left: 50px solid black;
+}
+
+
+#info {
+  background-color: #a52b2b;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  font-size : 1.2em;
+  line-height: 2em;
+  width: 600px;
+  margin: auto;
+  padding: 10px;
+}
+
+.documentation {
+  background-color: #008000;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.documentation a, 
+.documentation .highlight{
+  background-color: #004d00;
+  color: #00ff00;
+  padding: 5px;
+  text-decoration: none; /* Enlève l'effet de link*/
+}
+
+article .code {
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: 'Courier New', Courier, monospace;
+}
+pre {
+  margin: 10px;
+  padding:10px
+}
+
+table{
+  height : 100%;
+  margin: auto;
+  line-height: 2em;
+}
+
+th{
+  background-color: blue;
+  color : white;
+  height : 3em;
+
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+tr:last-child {
+  color: blue;
+}
