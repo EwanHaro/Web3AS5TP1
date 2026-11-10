@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Initiation au développement Web - Todo List</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="function.js" defer></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+
+    <body x-data="todoApp()" :class="{ dark: darkMode, dyslexie: dyslexie }">
+
+        <h1>Ma liste de tâches</h1>
+            <h2>Préférences</h2>
+                <button @click="toggleTheme()">
+                    🌙 Mode sombre
+                </button>
+                <button @click="toggleDyslexie()">
+                    📖 Lecture facilitée
+                </button>
+
+            <h2>Ajouter une tâche</h2>
+                <form @submit.prevent="addTask()">
+                    <input type="text" x-model="newTask" placeholder="Nouvelle tâche...">
+                    <button type="submit">Ajouter</button>
+                </form>
+
+            <h2>Statistiques</h2>
+                <p>Total : <strong x-text="taches.length"></strong></p>
+                <p>Terminées : <strong x-text="taches.filter(t => t.completed).length"></strong></p>
+                <p>Restantes : <strong x-text="taches.length - taches.filter(t => t.completed).length"></strong></p>
+
+            <h2>Mes tâches</h2>
+                <template x-if="taches.length === 0">
+                    <p>Aucune tâche pour le moment.</p>
+                </template>
+                <ul>
+                    <template x-for="(tache, index) in taches" :key="index">
+                        <li>
+                            <input type="checkbox" :checked="tache.completed" @change="toggleTask(index)">
+                            <span :class="{ 'completed': tache.completed }" x-text="tache.text"></span>
+                            <button class="task" @click="deleteTask(index)">Supprimer</button>
+                        </li>
+                    </template>
+                </ul>
+    </body>
+</html>
